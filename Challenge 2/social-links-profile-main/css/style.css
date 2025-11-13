@@ -1,0 +1,47 @@
+body{
+    background-color: hsl(0, 0%, 8%);
+    color: aliceblue;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.container{
+    background-color:hsl(0, 0%, 12%) ;
+    margin: auto;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    border: 20px;
+    
+}
+
+p{
+    font-size: 14px;
+    margin-bottom: 30PX;
+}
+img{
+    width: 128px;
+    height: 128px;
+    border-radius: 100px;
+}
+h3{
+    margin-top: -20px;
+    color:hsl(75, 94%, 57%);
+    margin-bottom: 50px;
+
+}
+a{
+    text-decoration: none;
+    color:white;
+   
+}                       
+.item1,.item2,.item3,.item4,.item5{
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color:hsl(0, 0%, 20%) ;
+    padding: 20px;
+    width: 240px;
+}

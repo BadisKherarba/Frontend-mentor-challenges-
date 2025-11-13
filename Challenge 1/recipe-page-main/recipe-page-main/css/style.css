@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+body{
+    background:hsl(30, 54%, 90%);
+    justify-content: center;
+    align-items: center;
+}
+
+.BG{
+margin: auto;
+background-color: white;
+height:auto;
+border-radius: 20px;
+padding: 20px;
+width: 600px;
+
+
+}
+img {
+height: 250px;
+width: 100%;
+border-radius: 15px;
+}
+h1{
+    
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;  
+    
+}
+
+p{
+    
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    
+
+}
+
+
+.purple{
+    background-color:#f7f1f7;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+ul{
+    
+    
+    list-style-position:inside;
+    list-style-type: disc;
+}
+li::before{
+ content:"";
+ padding-inline: 30px ;
+}
