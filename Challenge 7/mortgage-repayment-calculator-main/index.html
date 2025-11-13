@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script>
+      const numberInput = document.getElementById("numberInput");
+
+      // Function to format the number input
+      function formatNumberInput(event) {
+        let value = event.target.value;
+
+        // Remove non-numeric characters except for the decimal point
+        value = value.replace(/[^0-9.]/g, "");
+
+        // If there are multiple decimal points, keep only the first one
+        const parts = value.split(".");
+        if (parts.length > 2) {
+          value = parts[0] + "." + parts.slice(1).join("");
+        }
+
+        // Format the integer part with commas
+        const [integer, decimal] = value.split(".");
+        const formattedInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        let formattedValue = formattedInteger;
+
+        // Add the decimal part if exists
+        if (decimal) {
+          formattedValue += "." + decimal.substring(0, 2); // Limit to 2 decimal places
+        }
+
+        event.target.value = formattedValue;
+      }
+
+      // Event listener for the input field
+      numberInput.addEventListener("input", formatNumberInput);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="D1">
+        <div class="title">
+          <h2>Mortgage Calculator</h2>
+          <a href="">Clear All</a>
+        </div>
+        <div class="item1">
+          Mortgage Amount
+          <div class="input">
+            <span class="£">£</span
+            ><input type="number" class="hehe" id="Amount" />
+          </div>
+        </div>
+        <div class="Linput">
+          <div class="item2">
+            Mortgage Term
+            <div class="input1">
+              <input type="number" class="hehe1" id="years" /><span
+                class="years"
+                >years</span
+              >
+            </div>
+          </div>
+          <div class="item3">
+            Interest Rate
+            <div class="input1">
+              <input type="number" class="hehe1" id="per" /><span class="per"
+                >%</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="item4">
+          Mortgage Type <br />
+
+          <div class="MT">
+            <input type="radio" name="options" value="Repayment" id="12" />
+            <label for="12"> Repayment </label><br />
+            <input type="radio" name="options" value="Interest Only" id="11" />
+            <label for="11"> Interest Only </label><br />
+          </div>
+        </div>
+
+        <div class="item5">
+          <button onclick="calc()">
+            <img
+              src="./assets/images/icon-calculator.svg"
+              alt=""
+              style="height: 35px; margin-top: 5px; margin-left: 40px"
+            />
+            <span style="margin-left: 5px; margin-top: 10px; font-size: 1rem"
+              >Calculate Repayments</span
+            >
+          </button>
+        </div>
+      </div>
+      <div class="D3" id="Div3">
+        <!-- Empty results start -->
+        <div
+          style="
+            position: relative;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            display: block;
+          "
+        >
+          <img
+            src="./assets/images/illustration-empty.svg"
+            style="margin-left: 00px"
+          />
+
+          <h3>Results shown here</h3>
+          <span style="opacity: 50%; font-size: 0.9rem">
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </span>
+        </div>
+        <!-- Empty results end -->
+        <!-- Completed results start -->
+      </div>
+      <div class="D2" id="Div2">
+        <div class="text">
+          <h2>Your results</h2>
+          <span style="opacity: 50%; font-size: 0.9rem">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </span>
+        </div>
+        <div class="result">
+          <div class="R1">
+            <span style="opacity: 50%">Your monthly repayments</span>
+            <h1 style="color: hsl(61, 70%, 52%)">
+              £<span id="MP">0,000.00</span>
+            </h1>
+          </div>
+          <div class="R2">
+            <span style="opacity: 50%">Total you'll repay over the term</span>
+            <h3>£<span id="total">0,000.00</span></h3>
+          </div>
+        </div>
+      </div>
+      <!-- Completed results end -->
+    </div>
+  </body>
+  <script src="script.JS"></script>
+</html>
